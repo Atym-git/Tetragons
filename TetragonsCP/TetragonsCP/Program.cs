@@ -55,9 +55,9 @@
 
     internal class Tetragon : ATetragon
     {
-        public float c { get; set; }
-        public float d { get; set; }
-        public float angle2 { get; set; }
+        private float c { get; set; }
+        private float d { get; set; }
+        private float angle2 { get; set; }
 
         public Tetragon(float A, float B, float Angle, float C, float D, float Angle2) : base (A, B, Angle)
         {
@@ -79,11 +79,11 @@
 
     internal class ConvexTetragon : ATetragon
     {
-        public float d1 { get; set; }
-        public float d2 { get; set; }
+        private float d1 { get; set; }
+        private float d2 { get; set; }
 
-        public float c { get; set; }
-        public float d { get; set; }
+        private float c { get; set; }
+        private float d { get; set; }
 
         public ConvexTetragon(float A, float B, float Angle, float C, float D, float D1, float D2) : base(A, B, Angle)
         {
@@ -120,8 +120,8 @@
     }
     internal class Diamond : ATetragon
     {
-        public float d1 { get; set; }
-        public float d2 { get; set; }
+        private float d1 { get; set; }
+        private float d2 { get; set; }
 
         public Diamond(float A, float B, float Angle, float D1, float D2) : base(A, B, Angle)
         {
