@@ -2,7 +2,9 @@
 {
     internal class Program
     {
-        private static float aS = 4;
+        
+
+        private static float aS = 3;
         private static float bS = 5;
         private static float cS = 6;
         private static float dS = 7;
@@ -13,7 +15,7 @@
             ConvexTetragon convex = new ConvexTetragon(aS, bS, 0.523599f, cS, dS, 10, 4);
             Parallelogram parallelogram = new Parallelogram(aS, bS, 0.523599f);
             Diamond diamond = new Diamond(aS, bS, 0.523599f, 3, 5);
-            Square square = new Square(3, 5, 0.523599f);
+            Square square = new Square(aS, bS, 0.523599f);
 
             Console.WriteLine("Random Tetragon:");
             Console.WriteLine(tetragon.CountPerimeter());
