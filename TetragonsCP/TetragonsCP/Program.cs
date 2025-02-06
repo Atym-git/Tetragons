@@ -1,21 +1,24 @@
-﻿namespace TetragonsCP
+﻿using System.Runtime.CompilerServices;
+
+namespace TetragonsCP
 {
     internal class Program
     {
-        
-
         private static float aS = 3;
         private static float bS = 5;
         private static float cS = 6;
         private static float dS = 7;
+        private static float angleS = 30;
 
         static void Main(string[] args)
         {
-            Tetragon tetragon = new Tetragon(aS, bS, 0.523599f, cS, dS, 1.05f);
-            ConvexTetragon convex = new ConvexTetragon(aS, bS, 0.523599f, cS, dS, 10, 4);
-            Parallelogram parallelogram = new Parallelogram(aS, bS, 0.523599f);
-            Diamond diamond = new Diamond(aS, bS, 0.523599f, 3, 5);
-            Square square = new Square(aS, bS, 0.523599f);
+            float radians = (float)DegreesIntoRadians(angleS);
+
+            Tetragon tetragon = new Tetragon(aS, bS, radians, cS, dS, 1.05f);
+            ConvexTetragon convex = new ConvexTetragon(aS, bS, radians, cS, dS, 10, 4);
+            Parallelogram parallelogram = new Parallelogram(aS, bS, radians);
+            Diamond diamond = new Diamond(aS, bS, radians, 3, 5);
+            Square square = new Square(aS, bS, radians);
 
             Console.WriteLine("Random Tetragon:");
             Console.WriteLine(tetragon.CountPerimeter());
@@ -32,6 +35,11 @@
             Console.WriteLine("Square:");
             Console.WriteLine(square.CountPerimeter());
             Console.WriteLine(square.CountArea());
+        }
+
+        internal static double DegreesIntoRadians(double degrees)
+        {
+            return degrees * Math.PI / 180;
         }
     }
 
